@@ -1,17 +1,18 @@
 // src/App.js
 
 import React from 'react';
-
 import Services from './comps/Services';
+import Navbar from './comps/Navbar';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-3xl font-bold text-center mb-8">Service Booking App</h1>
-      </header>
-      <Services />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navbar />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
+    </Router>
   );
 }
 
